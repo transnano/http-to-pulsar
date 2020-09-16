@@ -1,0 +1,41 @@
+project_name: http-to-pulsar
+env:
+  - GO111MODULE=on
+before:
+  hooks:
+    - go mod tidy
+    - go mod download
+builds:
+  - main: .
+    binary: main
+    ldflags:
+      - -s -w
+    env:
+      - CGO_ENABLED=0
+archives:
+  - name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+    replacements:
+      darwin: darwin
+      linux: linux
+      windows: windows
+      386: i386
+      amd64: x86_64
+    format_overrides:
+      - goos: windows
+        format: zip
+release:
+  prerelease: auto
+nfpms:
+  -
+    id: http-to-pulsar-nfpms
+    package_name: http-to-pulsar
+    homepage: https://github.com/transnano/http-to-pulsar
+    maintainer: Transnano <transnano.jp@gmail.com>
+    description: Publish http request to pulsar
+    license: Apache 2.0
+    formats:
+      - deb
+      - rpm
+    bindir: /usr/bin
+    epoch: 1
+    release: 1
