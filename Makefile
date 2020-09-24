@@ -3,7 +3,7 @@ GIT_SHA    := $(shell git rev-parse --short HEAD)
 
 .PHONY: build
 build: ## Build go binary
-	CGO_ENABLED=0 GOOS=linux go build -installsuffix cgo -o prometheus-pulsar-remote-write
+	CGO_ENABLED=0 GOOS=linux go build -installsuffix cgo -o http-to-pulsar
 
 .PHONY: test
 test: ## Run all tests
