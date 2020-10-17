@@ -1,9 +1,7 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base", ":automergeMinor", ":automergePr"],
   "timezone": "Asia/Tokyo",
   "schedule": ["before 10am every weekday"],
   "labels": ["renovate"],
-  "postUpdateOptions": ["gomodTidy"],
-  "minor": { "automerge": true, "automergeType": "branch" },
-  "patch": { "automerge": true, "automergeType": "branch" }
+  "postUpdateOptions": ["gomodTidy"]
 }
