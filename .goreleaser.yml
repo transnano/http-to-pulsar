@@ -13,7 +13,7 @@ builds:
     env:
       - CGO_ENABLED=0
 archives:
-  - name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+  - name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
     replacements:
       darwin: darwin
       linux: linux
@@ -26,8 +26,7 @@ archives:
 release:
   prerelease: auto
 nfpms:
-  -
-    id: http-to-pulsar-nfpms
+  - id: http-to-pulsar-nfpms
     package_name: http-to-pulsar
     homepage: https://github.com/transnano/http-to-pulsar
     maintainer: Transnano <transnano.jp@gmail.com>
