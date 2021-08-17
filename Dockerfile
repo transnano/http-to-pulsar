@@ -1,5 +1,5 @@
 # Start by building the application.
-FROM golang:1.16.7-buster as build
+FROM golang:1.17.0-buster as build
 
 WORKDIR /go/src/github.com/transnano/http-to-pulsar/
 # For building Go Module required
