@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/apache/pulsar-client-go v0.9.0
-	github.com/prometheus/client_golang v1.14.0
+	github.com/prometheus/client_golang v1.22.0
 	github.com/prometheus/common v0.39.0
 )
 
